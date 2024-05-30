@@ -28,8 +28,26 @@ for(let i=0; i<input.length; i++){
 };
 
 // OUTPUT THE SELECTED VALUES WHEN THE HTML FORM IS SUBMITTED
+const submitButton = document.getElementById('submit-btn');
+const checkedBoxes = [];
 
+submitButton.addEventListener('click',function(event){
+ event.preventDefault(); 
 
+input.forEach(item => {
+    if(item.checked){
+        checkedBoxes.push(item.value);
+    }
+});
+    
+// for(let i = 0; i < input.length; i++){
+//     if(input[i].checked){
+//         checkedBoxes.push(input[i].value);
+//     }
+// }
+
+console.log(checkedBoxes);
+});
 // CREATE A FRUIT BASKET OBJECT AND INCREMENT - 
 //      i. THE VALUES OF THE OBJECT
 //      ii. THE VALUES OF THE INPUT VALUE
